@@ -1,0 +1,25 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /identity
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/mydatabase
+    username: admin
+    password: 123456
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  security:
+    jwt:
+      signer-key: "MHNtdHFqem1nZmMyNmgzdDN5MXhxM2hpZXQ2YmxvYnVqYXpxYjIyNTRlaWNvMWRzMnFpZXd2dWNidmJvOGtyN2w0ZnhjdWV1eDBweDB5MW54dHJxMnFhczUwbG5qMGdqNTdzMHFzamppczU3NHBjZ3l4NmlnOWNiYWJqaXgwMGE="
+
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+
+
