@@ -19,7 +19,8 @@ public enum ErrorCode {
     USERNAME_INVALID(1003, "Username must be at least 3 characters" ,HttpStatus.BAD_REQUEST),
     USERNAME_REQUIRED(1003, "Username required" ,HttpStatus.BAD_REQUEST),
     USER_NOT_EXISTED( 1004 , "User not existed" ,HttpStatus.NOT_FOUND),
-    UNAUTHENTICATED( 1005 , "unauthenticated",HttpStatus.UNAUTHORIZED)
+    UNAUTHENTICATED( 1005 , "unauthenticated",HttpStatus.UNAUTHORIZED),
+    UNAUTHORIZED(1008, "You do not have permission", HttpStatus.FORBIDDEN);
     ;
     int code;
     String message;

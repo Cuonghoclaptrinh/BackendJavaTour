@@ -1,10 +1,6 @@
 package com.example.PRJWEB.Entity;
 
-import com.example.PRJWEB.Enums.Roles;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Pattern;
 import lombok.*;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -12,12 +8,15 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
 
+import java.time.LocalDate;
+import java.util.Set;
+
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Table(name = "TaiKhoan")
+@Table(name = "\"User\"")
 @Builder
 public class User {
     @Id
@@ -26,10 +25,13 @@ public class User {
     String username;
     String password;
     String email;
-    String cccd;
-    String phonenumber;
+    @ElementCollection(fetch = FetchType.EAGER)
+    @CollectionTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"))
+    @Column(name = "role")
+    Set<String> roles;
+    String fullname;
+    String phone;
     String address;
-    Integer tripsCompleted;
-    @Enumerated(EnumType.STRING)
-    Roles roles;
+    LocalDate dateOfBirth;
+    String citizenId;
 }
