@@ -17,3 +17,7 @@ spring:
     jwt:
       signer-key: "MHNtdHFqem1nZmMyNmgzdDN5MXhxM2hpZXQ2YmxvYnVqYXpxYjIyNTRlaWNvMWRzMnFpZXd2dWNidmJvOGtyN2w0ZnhjdWV1eDBweDB5MW54dHJxMnFhczUwbG5qMGdqNTdzMHFzamppczU3NHBjZ3l4NmlnOWNiYWJqaXgwMGE="
 
+cors:
+  allowed-origins: http://localhost:3000
+  allowed-methods: GET,POST,PUT,DELETE
+  allowed-headers: "*"
